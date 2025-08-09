@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="default">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisma Al-Ma'mur - Link Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="theme-switcher">
+        <button data-theme="default" class="theme-btn active" title="Default Theme"></button>
+        <button data-theme="dark" class="theme-btn" title="Dark Mode"></button>
+        <button data-theme="galaxy" class="theme-btn" title="Galaxy Theme"></button>
+    </div>
+
+    <div class="container">
+        <header>
+            <img src="assets/images/logo.png" alt="Logo Prisma Al-Ma'mur">
+            <h1>Prisma Al-Ma'mur</h1>
+            <p id="sapaan" class="sapaan-waktu"></p> 
+        </header>
+
+        <main class="links-grid">
+            <a href="https://farisifakhri.github.io/prisma-cup-2025/" target="_blank" class="link-card" data-link-id="website_cup">
+                <i class="fas fa-trophy icon"></i>
+                <div class="link-text">
+                    <h3>Website Prisma Cup</h3>
+                    <p>Info lengkap, jadwal, dan pendaftaran.</p>
+                </div>
+                <span class="click-counter" id="count-website_cup">0</span>
+            </a>
+            <a href="https://www.instagram.com/prismaofficial.id" target="_blank" class="link-card" data-link-id="instagram">
+                <i class="fab fa-instagram icon"></i>
+                <div class="link-text">
+                    <h3>Instagram Resmi</h3>
+                    <p>Follow untuk update terbaru.</p>
+                </div>
+                <span class="click-counter" id="count-instagram">0</span>
+            </a>
+            <a href="#" target="_blank" class="link-card" data-link-id="whatsapp">
+                <i class="fab fa-whatsapp icon"></i>
+                <div class="link-text">
+                    <h3>Grup WhatsApp</h3>
+                    <p>Gabung komunitas peserta.</p>
+                </div>
+                <span class="click-counter" id="count-whatsapp">0</span>
+            </a>
+             <a href="#" target="_blank" class="link-card" data-link-id="guidebook">
+                <i class="fas fa-book-open icon"></i>
+                <div class="link-text">
+                    <h3>Buku Panduan</h3>
+                    <p>Unduh peraturan lengkap di sini.</p>
+                </div>
+                <span class="click-counter" id="count-guidebook">0</span>
+            </a>
+        </main>
+
+        <footer>
+            <button id="qr-code-btn" class="footer-btn">
+                <i class="fas fa-qrcode"></i> Bagikan Halaman
+            </button>
+        </footer>
+    </div>
+
+    <div id="qr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Scan untuk Membuka Halaman</h2>
+            <div id="qrcode"></div>
+            <p class="qr-url"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

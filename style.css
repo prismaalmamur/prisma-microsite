@@ -1,0 +1,180 @@
+/* Import Font & Font Awesome */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Variabel Warna CSS untuk Tema */
+:root {
+    --bg-grad-1: #3A6B35;
+    --bg-grad-2: #8A5A44;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
+    --header-color: #333;
+    --sapaan-bg: rgba(138, 90, 68, 0.1);
+    --sapaan-color: #8A5A44;
+    --card-hover-bg: #f1f1f1;
+}
+
+[data-theme="dark"] {
+    --bg-grad-1: #232526;
+    --bg-grad-2: #414345;
+    --card-bg: #333;
+    --text-color: #f1f1f1;
+    --header-color: #fff;
+    --sapaan-bg: rgba(255, 255, 255, 0.1);
+    --sapaan-color: #00aaff;
+    --card-hover-bg: #444;
+}
+
+[data-theme="galaxy"] {
+    --bg-grad-1: #2c3e50;
+    --bg-grad-2: #4ca1af;
+    --card-bg: rgba(0, 0, 0, 0.3);
+    --text-color: #fff;
+    --header-color: #fff;
+    --sapaan-bg: rgba(76, 161, 175, 0.2);
+    --sapaan-color: #fff;
+    --card-hover-bg: rgba(0, 0, 0, 0.5);
+}
+
+/* Pengaturan Dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2));
+    color: var(--text-color);
+    transition: background 0.5s ease;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: background-color 0.5s ease;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+header img { width: 100px; border-radius: 50%; }
+header h1 { color: var(--header-color); }
+.sapaan-waktu {
+    background-color: var(--sapaan-bg);
+    color: var(--sapaan-color);
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Layout Grid untuk Link */
+.links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.link-card:hover {
+    background-color: var(--card-hover-bg);
+    transform: translateY(-5px);
+}
+
+.link-card .icon {
+    font-size: 2em;
+    margin-right: 1rem;
+    width: 40px;
+    text-align: center;
+}
+.link-text h3 { margin: 0; }
+.link-text p { margin: 0; font-size: 0.8em; opacity: 0.8; }
+
+.click-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: var(--bg-grad-1);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+/* Fitur Tambahan */
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    padding: 5px;
+    border-radius: 20px;
+    display: flex;
+    gap: 5px;
+}
+.theme-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+.theme-btn.active { border-color: #ffcc00; }
+[data-theme="default"] { background: linear-gradient(135deg, #3A6B35, #8A5A44); }
+[data-theme="dark"] { background: linear-gradient(135deg, #232526, #414345); }
+[data-theme="galaxy"] { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
+
+footer { text-align: center; margin-top: 2rem; }
+.footer-btn {
+    background: none;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Modal QR Code */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+#qrcode { margin: 1rem auto; }
+.qr-url { font-size: 0.8em; color: #888; }
